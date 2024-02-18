@@ -22,11 +22,11 @@ int main()
 
     do
     {
-        printf("%-10s|%-25s\n", "C”DIGO", "FUN«√O");
+        printf("%-10s|%-25s\n", "C√ìDIGO", "FUN√á√ÉO");
         printf("%-10s|%-25s\n", "   1", "ADICIONAR PRODUTO");
         printf("%-10s|%-25s\n\n", "   2", "EXIBIR RESULTADOS");
 
-        printf("Digite o cÛdigo do que deseja fazer: ");
+        printf("Digite o c√≥digo do que deseja fazer: ");
         scanf("%d", &codigo);
 
         system("cls || clear");
@@ -43,7 +43,7 @@ int main()
 
             for (j = 0; j < 3; j++)
             {
-                printf("Total de vendas do %d∫ mÍs: ", j + 1);
+                printf("Total de vendas do %d¬∫ m√™s: ", j + 1);
                 scanf("%f", &produto[contador].mes[j]);
                 
                 produto[contador].total += produto[contador].mes[j];
@@ -51,12 +51,12 @@ int main()
 
             produto[contador].vmd = (produto[contador].total / 3) / 25;
 
-            printf("Tempo de reposiÁ„o: ");
+            printf("Tempo de reposi√ß√£o: ");
             scanf("%f", &produto[contador].tr);
 
             produto[contador].emin = produto[contador].vmd * produto[contador].tr;
 
-            printf("Lote de reposiÁ„o: ");
+            printf("Lote de reposi√ß√£o: ");
             scanf("%f", &produto[contador].lr);
 
             produto[contador].emax = produto[contador].emin + produto[contador].lr;
@@ -64,9 +64,8 @@ int main()
             printf("Estoque total: ");
             scanf("%f", &produto[contador].ea);
 
-            strcpy(produto[contador].resultado, (produto[contador].ea > produto[contador].emin) ? "N√O COMPRAR" : "COMPRAR");
+            strcpy(produto[contador].resultado, (produto[contador].ea > produto[contador].emin) ? "N√ÉO COMPRAR" : "COMPRAR");
             
-
             contador++;
             system("cls || clear");
             break;
@@ -74,18 +73,18 @@ int main()
         case 2:
             for (i = 0; i < contador; i++)
             {
-                printf("------------- INFORMA«’ES DO %d∫ PRODUTO -------------\n", i + 1);
+                printf("------------- INFORMA√á√ïES DO %d¬∫ PRODUTO -------------\n", i + 1);
                 printf("Nome do produto: %s", produto[i].nome);
-                printf("Venda mÈdia di·ria: R$%.2f\n", produto[i].vmd);
-                printf("Estoque mÌnimo: %.f\n", produto[i].emin);
-                printf("Estoque m·ximo: %.f\n", produto[i].emax);
+                printf("Venda m√©dia di√°ria: R$%.2f\n", produto[i].vmd);
+                printf("Estoque m√≠nimo: %.f\n", produto[i].emin);
+                printf("Estoque m√°ximo: %.f\n", produto[i].emax);
                 printf("Resultado: %s\n", produto[i].resultado);
                 printf("------------------------------------------------------\n\n");
             }
             break;
 
             default:
-            printf("CÛdigo inv·lido! Digite novamente.\n");
+            printf("C√≥digo inv√°lido! Digite novamente.\n");
             break;
         }
     } while (codigo != 2);

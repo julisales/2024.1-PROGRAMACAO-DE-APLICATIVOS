@@ -1,7 +1,7 @@
 package app;
 
 public class Product {
-	 	public String Name;
+	    public String Name;
 	    public double Quantity;
 	    public double Price;
 

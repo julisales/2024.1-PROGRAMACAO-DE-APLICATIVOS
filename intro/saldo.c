@@ -39,7 +39,7 @@ int main()
 
         for (j = 0; j < 3; j++)
         {
-            printf("Digite a previsão %d: ", j + 1);
+            printf("Digite a previsÃ£o %d: ", j + 1);
             scanf("%f", &recebimentos[i].previsao[j]);
 
             printf("Digite a realizada %d: ", j + 1);
@@ -52,8 +52,8 @@ int main()
         system("cls || clear");
     }
 
-    printf("------------------ SAÍDAS -----------------\n");
-    printf("Quantas saídas deseja adicionar: ");
+    printf("------------------ SAÃDAS -----------------\n");
+    printf("Quantas saÃ­das deseja adicionar: ");
     printf("%f", &qtd_contas);
 
     struct saidas contas[qtd_contas];
@@ -62,7 +62,7 @@ int main()
 
     for (i = 0; i < qtd_recebimento; i++)
     {
-        printf("Digite o nome da conta da saída %d: ", i + 1);
+        printf("Digite o nome da conta da saÃ­da %d: ", i + 1);
         scanf("%s", contas[i].nome); 
 
         strupr(contas[i].nome);
@@ -73,7 +73,7 @@ int main()
 
         for (j = 0; j < 3; j++)
         {
-            printf("Digite a previsão %d: ", j + 1);
+            printf("Digite a previsÃ£o %d: ", j + 1);
             scanf("%f", &contas[i].previsao[j]);
 
             printf("Digite a realizada %d: ", j + 1);

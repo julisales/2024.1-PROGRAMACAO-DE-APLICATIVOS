@@ -21,13 +21,11 @@ public class Program {
 
         JOptionPane.showMessageDialog(null, "Atualização: " + product.Name + ", Estoque atual: " + product.Quantity + ", Preço: " + product.Price);
 
-        stock = Integer.parseInt(JOptionPane.showInputDialog("Atualmente alguma venda foi realizada? Digite a " +
-                "quantidade: "));
+        stock = Integer.parseInt(JOptionPane.showInputDialog("Atualmente alguma venda foi realizada? Digite a quantidade: "));
 
         product.subProduct(stock);
 
-        JOptionPane.showMessageDialog(null,
-                "Atualização pós venda: " + product.Name + ", Estoque atual: " + product.Quantity + ", Preço: " + product.Price + ", Valor atual do estoque: " + product.Price * product.Quantity);
+        JOptionPane.showMessageDialog(null, "Atualização pós venda: " + product.Name + ", Estoque atual: " + product.Quantity + ", Preço: " + product.Price + ", Valor atual do estoque: " + product.Price * product.Quantity);
     }
 }
 

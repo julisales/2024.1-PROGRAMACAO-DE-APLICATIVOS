@@ -1,4 +1,5 @@
 package app;
+import javax.swing.*;
 import java.util.Scanner;
 public class Empresa {
     public static void main(String[] args) {
@@ -50,21 +51,21 @@ public class Empresa {
                         System.out.print("Informe o preço individual: ");
                         produto.preco = scan.nextDouble();
 
-                        System.out.println("\nConfirmação: " + produto.nome + ", Estoque atual: " + produto.quantidade + ", Preço: R$" + produto.preco);
+                        JOptionPane.showMessageDialog(null, String.format("\nConfirmação: %s, Estoque atual: %.2f, Preço: R$%.2f", produto.nome, produto.quantidade, produto.preco));
 
-                        System.out.print("\nDeseja inserir mais produtos? ");
+                        System.out.print("\nDeseja inserir mais produtos? Digite a quantidade: ");
                         int estoque = scan.nextInt();
 
                         produto.addProduto(estoque);
 
-                        System.out.println("\nAtualização: " + produto.nome + ", Estoque atual: " + produto.quantidade + ", Preço: R$" + produto.preco);
+                        JOptionPane.showMessageDialog(null, String.format("\nAtualização: %s, Estoque atual: %.2f, Preço: R$%.2f", produto.nome, produto.quantidade, produto.preco));
 
-                        System.out.print("Atualmente alguma venda foi realizada? ");
+                        System.out.print("Atualmente alguma venda foi realizada? Digite a quantidade:");
                         estoque = scan.nextInt();
 
                         produto.subProduto(estoque);
 
-                        System.out.println("\nAtualização pós venda: " + produto.nome + ", Estoque atual: " + produto.quantidade + ", Preço: R$" + produto.preco);
+                        JOptionPane.showMessageDialog(null, String.format("\nAtualização pós venda: %s, Estoque atual: %.2f, Preço: R$%.2f", produto.nome, produto.quantidade, produto.preco));
                         break;
 
                     case 2:
@@ -79,10 +80,7 @@ public class Empresa {
                         System.out.print("Informe a categoria do fornecedor: ");
                         fornecedor.categoria = scan.next() + scan.nextLine();
 
-                        System.out.println("\nFornecedor cadastrado com sucesso!");
-                        System.out.println("Nome: " + fornecedor.nome);
-                        System.out.println("Quantidade de produtos fornecidos: " + fornecedor.quantidadeProdutos);
-                        System.out.println("Categoria: " + fornecedor.categoria);
+                        JOptionPane.showMessageDialog(null, String.format("\nFornecedor cadastrado com sucesso!\nNome: %s\nQuantidade de produtos fornecidos: %d\nCategoria: %s", fornecedor.nome, fornecedor.quantidadeProdutos, fornecedor.categoria));
 
                         fornecedor.avisoPoucoEstoque();
                         break;
@@ -96,32 +94,35 @@ public class Empresa {
                         System.out.print("Informe o endereço do cliente: ");
                         cliente.endereco = scan.next() + scan.nextLine();
 
-                        System.out.println("\nCliente cadastrado com sucesso!");
-                        System.out.println("Nome: " + cliente.nome);
-                        System.out.println("Endereço: " + cliente.endereco);
+                        JOptionPane.showMessageDialog(null, String.format("\nCliente cadastrado com sucesso!\nNome: %s\nEndereço: %s", cliente.nome, cliente.endereco));
 
                         System.out.print("\nDeseja desativar este cliente? (1 para sim, 0 para não): ");
-                        int opcao = scan.nextInt();
+                        int desativa = scan.nextInt();
 
-                        if (opcao == 1) {
+                        if (desativa == 1) {
                             cliente.desativarCliente();
-                            System.out.println("\nCliente desativado com sucesso!");
+                            JOptionPane.showMessageDialog(null,"\nCliente desativado com sucesso!");
                         } else {
-                            System.out.println("\nCliente continua ativo.");
+                            JOptionPane.showMessageDialog(null, "\nCliente continua ativo.");
                         }
                         break;
 
                     case 0:
-                        System.out.println("Saindo do programa...");
+                        JOptionPane.showConfirmDialog(null, "Deseja realmente sair do programa?", "Confirmação", JOptionPane.YES_NO_OPTION);
+                        int opcao = 0;
+                        if (opcao == JOptionPane.YES_OPTION) {
+                            continuar = false;
+                            JOptionPane.showMessageDialog(null, "Saindo do programa...");
+                        }
                         break;
 
                     default:
-                        System.out.println("Código inválido!");
+                        JOptionPane.showMessageDialog(null, "Código inválido!");
                         break;
                 }
             }
         } else {
-            System.out.println("Funcionário inválido!");
+            JOptionPane.showMessageDialog(null, "Funcionário inválido!");
         }
 
         scan.close();

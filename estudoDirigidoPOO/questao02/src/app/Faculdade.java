@@ -115,5 +115,6 @@ public class Faculdade {
                     break;
             }
         }
+        scan.close();
     }
 }
